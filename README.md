@@ -26,7 +26,7 @@ c) If they are the same, then one of 3,4 is different. Weigh them against each o
 
 ## Usage:
 * `(load "brooklin-99.scm")` will find the different islander form the builtin list `pp`
-* Once the program is running you can evaluate any list from the REPL:
+* Once the program is running you can "find the different islander" from any list from the REPL:
 `(do-dat-thing your-list)`
 The list must contain 12 elements, only one owhich can be different from all the others.
 There is no checking for now :)
