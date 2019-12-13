@@ -9,27 +9,21 @@
                (begin
                     (if (> a b)
                          1
-                         2
-                         )
-               )
-          )
-)
+                         2))))
 
 (define pp (list 2 2 2 2 2 2 2 2 2 2 2 1))
 
-(define (do-dat-thing pp) (begin
+(define (do-dat-thing pp) (if (equal? (length pp) 12)
+                              (find pp)
+                              (begin (display "The list's length is wrong.")(newline))))
+
+(define (find pp) (begin
+     
      (define p1 (list (list-ref pp 0)(list-ref pp 1)(list-ref pp 2)(list-ref pp 3)))
      (define p2 (list (list-ref pp 4)(list-ref pp 5)(list-ref pp 6)(list-ref pp 7)))
      (define p3 (list (list-ref pp 8)(list-ref pp 9)(list-ref pp 10)(list-ref pp 11)))
 
      (define w1 (scale (flat p1) (flat p2))) ;; first weighing
-          
-          ; (cond ((> 3 3) 'greater)
-          ; 
-          ;       ((< 3 3) 'less)
-          ; 
-          ;       (else 'equal))
-          
      (cond ((equal? w1 0) (begin
                               (define w2 (scale (flat(list (car p3)(cadr p3)(caddr p3))) (flat(list (car p1)(cadr p1)(caddr p1)))))
                               (cond ((equal? w2 0) (begin
